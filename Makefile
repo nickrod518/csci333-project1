@@ -2,6 +2,9 @@ BUILD = ./build
 TEST = ./test
 LIB = ./lib
 SRC = ./src
+AQ = ./src/AQueue
+LQ = ./src/LQueue
+VQ = ./src/VQueue
 
 CPP = g++
 CPPFLAGS = -Wall -Wextra
