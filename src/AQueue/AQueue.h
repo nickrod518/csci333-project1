@@ -6,13 +6,13 @@ class AQueue {
   int* theQueue;
   int front;
   int back;
-  int size;
+  int numElements;
   int capacity;
   int initialCapacity;
 
  public:
-  AQueue(int initialSize = 10);
-  ~AQueue(); //destructor
+  Queue(int initialSize = 10);
+  ~Queue(); //destructor
   void enqueue(int value);
   int dequeue();
   int size();

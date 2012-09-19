@@ -4,52 +4,55 @@
 #include <string.h>
 #include <assert.h>
 
-AQueue::AQueue(int initialSize) {
+AQueue::Queue(int initialSize) {
+  if (initialCapacity != 0)
+    initialCapacity = initialSize;
+
   theQueue = new int[initialSize];
-  front, back, size = 0;
+  front, back, numElements = 0;
   capacity = initialSize;
 }
 
-AQueue::~AQueue() {
+AQueue::~Queue() {
   delete[] theQueue;
 }
 
 void AQueue::enqueue(int value) {
-  if (size == capacity) {
+  if (numElements == capacity) {
     capacity = capacity*2
     int* newQueue = new int[capacity];
-    memcpy(newQueue, theQueue, size);
+    memcpy(newQueue, theQueue, numElements);
     delete[] theQueue;
     theQueue = newQueue;
   }
-  assert(size != capacity);
+  assert(numElements != capacity);
 
-  if (size <= capacity/4 && capacity/2 > initialCapacity) {
+  if (numElements <= capacity/4 && capacity/2 > initialCapacity) {
     capacity = capacity/2
     int* newQueue = new int[capacity];
-    memcpy(newQueue, theQueue, size);
+    memcpy(newQueue, theQueue, numElements);
     delete[] theQueue;
     theQueue = newQueue;
   }
-  assert(size <= capacity/2);
+  assert(numElements <= capacity/2);
   assert(capacity >= initialCapacity);
 
   back = (back + 1) % capacity;
   theQueue[back] = value;
-  size++;  
+  numElements++;
 }
 
 int AQueue::dequeue() {
   int result = theQueue[front];
   front = (front + 1) % capacity;
-  size--;
+  numElements--;
   return result;
 }
 
 int AQueue::size() {
-  return size;
+  return numElements;
 }
 
-bool isEmpty() {
-  return !size;
+bool AQueue::isEmpty() {
+  return !numElements;
 }
