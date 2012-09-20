@@ -17,12 +17,13 @@ CPPFLAGS = -Wall -Wextra
 all: $(BUILD)/main $(TEST)/queue_test
 
 $(BUILD)/main: $(OBJECTS) $(IMPLEMENTATIONS)
-	$(CPP) $(CPPFLAGS) -o $(BUILD)/main $(OBJECTS) $(IMPLEMENTATIONS)
+	$(CPP) $(CPPFLAGS) -o $(BUILD)/main $(SRC)/queue_tester.cpp $(OBJECTS)
 
-$(TEST)/queue_test: $(TEST)/Queue.cpp $(OBJECTS)
-	$(CPP) $(CPPFLAGS) $(GTEST_INCLUDES) -pthread -o queue_test $(OBJECTS) $(IMPLEMENTATIONS) $(GTEST_MAINA)
+$(TEST)/queue_test: $(TEST)/Queue.cpp $(OBJECTS) $(GTEST_MAINA)
+	$(CPP) $(CPPFLAGS) $(GTEST_INCLUDES) -pthread -o $(TEST)/queue_test $(TEST)/Queue.cpp $(OBJECTS) $(GTEST_MAINA)
 
-$(GTEST_MAINA: $(GTEST)/src/*.cc $(GTEST)/src/*.h
+$(GTEST_MAINA): $(GTEST)/src/*.cc $(GTEST)/src/*.h
+	cd $(GTEST)/make; make
 
 AQueue.o: $(AQ)/AQueue.h $(AQ)/AQueue.cpp
 	$(CPP) $(CPPFLAGS) -c $(AQ)/AQueue.cpp
@@ -40,3 +41,4 @@ clean:
 	rm -f $(BUILD)/main
 	rm -f $(TEST)/queue_test
 	rm -f $(GTEST_MAINA)
+	cd $(GTEST)/make; make clean

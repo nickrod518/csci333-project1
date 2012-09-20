@@ -1,7 +1,9 @@
 #include "gtest/gtest.h"
-#include "../src/Stack.h"
+#include "../src/AQueue/AQueue.h"
+#include "../src/LQueue/LQueue.h"
+#include "../src/VQueue/VQueue.h"
 
-*/
+/*
 TEST(QueueTest, Initialize) {
   Stack* s = new Stack();
 
