@@ -36,7 +36,6 @@ VQueue.o: $(VQ)/VQueue.h $(VQ)/VQueue.cpp
 
 clean:
 	rm -rf $(SRC)/*.o
-	rm -f $(BUILD)/*.o
 	rm -rf *~
 	rm -f $(BUILD)/main
 	rm -f $(TEST)/queue_test
