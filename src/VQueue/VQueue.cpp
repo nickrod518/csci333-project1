@@ -1,15 +1,14 @@
-#include "AQueue.h"
+#include "VQueue.h"
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 
-AQueue::AQueue(int initialSize) {
+VQueue::VQueue(int initialSize) {
   theQueue = new int[initialSize];
-  front, back, size = 0;
   capacity = initialSize;
 }
 
-AQueue::~AQueue() {
+VQueue::~VQueue() {
   delete[] theQueue;
 }

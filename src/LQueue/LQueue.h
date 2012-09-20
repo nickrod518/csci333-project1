@@ -1,17 +1,17 @@
-#ifndef __AQUEUE_H__
-#define __AQUEUE_H__
+#ifndef __LQUEUE_H__
+#define __LQUEUE_H__
 
-class AQueue {
+class LQueue {
  private:
   int* theQueue;
   int front;
   int back;
-  int size;
+  int numElements;
   int capacity;
 
  public:
-  AQueue(int initialSize = 10);
-  ~AQueue(); //destructor
+  LQueue(int initialSize = 10);
+  ~LQueue(); //destructor
   void enqueue(int value);
   int dequeue();
   int size();

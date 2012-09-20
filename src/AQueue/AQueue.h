@@ -11,8 +11,8 @@ class AQueue {
   int initialCapacity;
 
  public:
-  Queue(int initialSize = 10);
-  ~Queue(); //destructor
+  AQueue(int initialSize = 10);
+  ~AQueue(); //destructor
   void enqueue(int value);
   int dequeue();
   int size();

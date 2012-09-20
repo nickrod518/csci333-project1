@@ -4,22 +4,24 @@
 #include <string.h>
 #include <assert.h>
 
-AQueue::Queue(int initialSize) {
+AQueue::AQueue(int initialSize) {
   if (initialCapacity != 0)
     initialCapacity = initialSize;
 
+  front = 0;
+  back = 0;
+  numElements = 0;
   theQueue = new int[initialSize];
-  front, back, numElements = 0;
   capacity = initialSize;
 }
 
-AQueue::~Queue() {
+AQueue::~AQueue() {
   delete[] theQueue;
 }
 
 void AQueue::enqueue(int value) {
   if (numElements == capacity) {
-    capacity = capacity*2
+    capacity = capacity*2;
     int* newQueue = new int[capacity];
     memcpy(newQueue, theQueue, numElements);
     delete[] theQueue;
@@ -28,7 +30,7 @@ void AQueue::enqueue(int value) {
   assert(numElements != capacity);
 
   if (numElements <= capacity/4 && capacity/2 > initialCapacity) {
-    capacity = capacity/2
+    capacity = capacity/2;
     int* newQueue = new int[capacity];
     memcpy(newQueue, theQueue, numElements);
     delete[] theQueue;
