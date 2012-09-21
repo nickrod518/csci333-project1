@@ -3,33 +3,43 @@
 #include "../src/LQueue/LQueue.h"
 #include "../src/VQueue/VQueue.h"
 
-/*
-TEST(QueueTest, Initialize) {
-  Stack* s = new Stack();
+TEST(AQueueTest, Initialize) {
+  AQueue* q = new AQueue();
 
-  EXPECT_EQ(0, s->size());
-  delete s;
+  EXPECT_EQ(0, q->size());
+  EXPECT_EQ(1, q->isEmpty());
+  delete q;
 }
 
-TEST(QueueTest, Push) {
-  Stack* s = new Stack();
-  s->push(6);
+TEST(AQueueTest, Enqueue) {
+  AQueue* q = new AQueue();
+  q->enqueue(5);
 
-  EXPECT_EQ(6, s->peek());
-  EXPECT_EQ(1, s->size());
-  delete s;
+  EXPECT_EQ(0, q->isEmpty());
+  EXPECT_EQ(1, q->size());
+  EXPECT_EQ(5, q->dequeue());
+  delete q;
 }
 
-// test what happens when pushing exceeds stack capacity
-TEST(QueueTest, Extend) {
-  Stack* s = new Stack(3);
-  s->push(1);
-  s->push(2);
-  s->push(3);
-  s->push(4);
+TEST(AQueueTest, Dequeue) {
+  AQueue* q = new AQueue();
+  q->enqueue(5);
+  q->enqueue(10);
+  q->enqueue(15);
 
-  EXPECT_EQ(4, s->peek());
-  EXPECT_EQ(4, s->size());
-  delete s;
+  EXPECT_EQ(5, q->dequeue());
+  EXPECT_EQ(10, q->dequeue());
+  EXPECT_EQ(15, q->dequeue());
+  delete q;
 }
-*/
+
+TEST(AQueueTest, IsEmpty) {
+  AQueue* q = new AQueue();
+  
+  EXPECT_EQ(1, q->isEmpty());
+
+  q->enqueue(1);
+
+  EXPECT_EQ(0, q->isEmpty());
+  delete q;
+}

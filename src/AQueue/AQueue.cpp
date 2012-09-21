@@ -5,7 +5,7 @@
 #include <assert.h>
 
 AQueue::AQueue(int initialSize) {
-  if (initialCapacity != 0)
+//  if (initialCapacity != 0)
     initialCapacity = initialSize;
 
   front = 0;
@@ -28,7 +28,7 @@ void AQueue::enqueue(int value) {
     theQueue = newQueue;
   }
   assert(numElements != capacity);
-
+/*
   if (numElements <= capacity/4 && capacity/2 > initialCapacity) {
     capacity = capacity/2;
     int* newQueue = new int[capacity];
@@ -38,13 +38,14 @@ void AQueue::enqueue(int value) {
   }
   assert(numElements <= capacity/2);
   assert(capacity >= initialCapacity);
-
-  back = (back + 1) % capacity;
+*/
   theQueue[back] = value;
+  back = (back + 1) % capacity;
   numElements++;
 }
 
 int AQueue::dequeue() {
+  assert(!isEmpty());
   int result = theQueue[front];
   front = (front + 1) % capacity;
   numElements--;
