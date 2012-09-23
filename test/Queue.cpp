@@ -43,3 +43,40 @@ TEST(AQueueTest, IsEmpty) {
   EXPECT_EQ(0, q->isEmpty());
   delete q;
 }
+
+TEST(LQueueTest, Initialize) {
+  LQueue q = LQueue();
+
+  EXPECT_EQ(0, q.size());
+  EXPECT_EQ(1, q.isEmpty());
+}
+
+TEST(LQueueTest, Enqueue) {
+  LQueue q = LQueue();
+  q.enqueue(5);
+
+  EXPECT_EQ(0, q.isEmpty());
+  EXPECT_EQ(1, q.size());
+  EXPECT_EQ(5, q.dequeue());
+}
+
+TEST(LQueueTest, Dequeue) {
+  LQueue q = LQueue();
+  q.enqueue(5);
+  q.enqueue(10);
+  q.enqueue(15);
+
+  EXPECT_EQ(5, q.dequeue());
+  EXPECT_EQ(10, q.dequeue());
+  EXPECT_EQ(15, q.dequeue());
+}
+
+TEST(LQueueTest, IsEmpty) {
+  LQueue q = LQueue();
+  
+  EXPECT_EQ(1, q.isEmpty());
+
+  q.enqueue(1);
+
+  EXPECT_EQ(0, q.isEmpty());
+}

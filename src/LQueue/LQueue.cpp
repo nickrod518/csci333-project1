@@ -26,6 +26,10 @@ void LQueue::enqueue(int value) {
   back = temp;
   //increment numElements
   numElements++;
+  //if this is the first element, it is the front and back
+  if (front == 0)
+    front = back;
+  assert(!isEmpty());
 }
 
 int LQueue::dequeue() {
