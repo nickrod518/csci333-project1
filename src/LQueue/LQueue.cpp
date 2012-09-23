@@ -12,41 +12,28 @@ LQueue::LQueue() {
 }
 
 LQueue::~LQueue() {
-  //keep dequeueing until empty
-  while (!isEmpty())
+  while (!isEmpty()) //keep dequeueing until empty
     dequeue();
 }
 
 void LQueue::enqueue(int value) {
-  //create new node
-  Node* temp = new Node(value);
-  //point back to new node
-  back->setNext(temp);
-  //temp is now back
-  back = temp;
-  //increment numElements
-  numElements++;
-  //if this is the first element, it is the front and back
-  if (front == 0)
+  Node* temp = new Node(value); //create new node
+  back->setNext(temp); //point back to new node
+  back = temp; //temp is now back
+  numElements++; //increment numElements
+  if (front == 0) //if this is the first element, it is the front and back
     front = back;
   assert(!isEmpty());
 }
 
 int LQueue::dequeue() {
-  //make sure queue isn't empty
-  assert(!isEmpty());
-  //create new node pointing to front
-  Node* temp = front;
-  //store value of front
-  int result = temp->getValue();
-  //front is now the node after front
-  front = temp->getNext();
-  //delete temp node
-  delete temp;
-  //decrement numElements
-  numElements--;
-  //return value of old front
-  return result;
+  assert(!isEmpty()); //make sure queue isn't empty
+  Node* temp = front; //create new node pointing to front
+  int result = temp->getValue(); //store value of front
+  front = temp->getNext(); //front is now the node after front
+  delete temp; //delete temp node
+  numElements--; //decrement numElements
+  return result; //return value of old front
 }
 
 int LQueue::size() {
