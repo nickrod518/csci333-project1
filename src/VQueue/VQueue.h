@@ -1,17 +1,17 @@
 #ifndef __VQUEUE_H__
 #define __VQUEUE_H__
 
+#include <list>
+
+using std::list;
+
 class VQueue {
  private:
-  int* theQueue;
-  int front;
-  int back;
-  int numElements;
-  int capacity;
+  list<int> theQueue;
 
  public:
-  VQueue(int initialSize = 10);
-  ~VQueue(); //destructor
+  VQueue();
+  ~VQueue();
   void enqueue(int value);
   int dequeue();
   int size();

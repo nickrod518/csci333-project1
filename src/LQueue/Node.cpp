@@ -16,6 +16,6 @@ Node* Node::getNext() {
   return next;
 }
 
-void setNext(Node* &n) {
+void Node::setNext(Node* &n) {
   next = n;
 }
