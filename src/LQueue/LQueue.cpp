@@ -7,7 +7,7 @@
 
 LQueue::LQueue() {
   numElements = 0;
-  front = 0;
+  front = 0; 
   back = 0;
 }
 
@@ -18,11 +18,15 @@ LQueue::~LQueue() {
 
 void LQueue::enqueue(int value) {
   Node* temp = new Node(value); //create new node
-  back->setNext(temp); //point back to new node
-  back = temp; //temp is now back
+  if (back == 0) { //if back is null, this is the first element
+    back = temp;
+    front = temp;
+  }
+  else {
+    back->setNext(temp); //point back to new node
+    back = temp; //temp is now back
+  }
   numElements++; //increment numElements
-  if (front == 0) //if this is the first element, it is the front and back
-    front = back;
   assert(!isEmpty());
 }
 

@@ -13,16 +13,21 @@ int main() {
 
   AQueue* aQueue = new AQueue(5);
   aQueue->enqueue(1);
-  cout << "empty?" << aQueue->isEmpty() << endl;
   aQueue->enqueue(2);
   aQueue->enqueue(3);
+  aQueue->enqueue(4);
+  aQueue->enqueue(5);
+  cout<< "size " << aQueue->size() << endl;
 
   cout << aQueue->dequeue() << endl;
   cout << aQueue->dequeue() << endl;
   cout << aQueue->dequeue() << endl;
+  cout << aQueue->dequeue() << endl;
+  cout << aQueue->dequeue() << endl;
+  cout<< "size " << aQueue->size() << endl;
   cout << "empty?" << aQueue->isEmpty() << endl;
 
-  delete[] aQueue;
+  delete aQueue;
   
   cout << "end AQueue testing" << endl;
 
@@ -35,10 +40,12 @@ int main() {
   cout << "empty?" << lQueue.isEmpty() << endl;
   lQueue.enqueue(2);
   lQueue.enqueue(3);
+  cout<< "size " << lQueue.size() << endl;
 
   cout << lQueue.dequeue() << endl;
   cout << lQueue.dequeue() << endl;
   cout << lQueue.dequeue() << endl;
+  cout<< "size " << lQueue.size() << endl;
   cout << "empty?" << lQueue.isEmpty() << endl;
 
   cout << "end LQueue testing" << endl;
@@ -51,16 +58,17 @@ int main() {
   cout << "empty?" << vQueue->isEmpty() << endl;
   vQueue->enqueue(2);
   vQueue->enqueue(3);
+  cout<< "size " << vQueue->size() << endl;
 
   cout << vQueue->dequeue() << endl;
   cout << vQueue->dequeue() << endl;
   cout << vQueue->dequeue() << endl;
+  cout<< "size " << vQueue->size() << endl;
   cout << "empty?" << vQueue->isEmpty() << endl;
 
   delete vQueue;
   
-  cout << "end AQueue testing" << endl;
-
+  cout << "end VQueue testing" << endl;
 
   return 0;
 }

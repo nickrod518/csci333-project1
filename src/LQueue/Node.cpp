@@ -14,11 +14,9 @@ int Node::getValue() {
 }
 
 Node* Node::getNext() {
-  assert(next != 0);
   return next;
 }
 
 void Node::setNext(Node* &n) {
   next = n;
-  assert(next != 0);
 }
