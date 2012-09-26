@@ -18,9 +18,9 @@ LQueue::~LQueue() {
 
 void LQueue::enqueue(int value) {
   Node* temp = new Node(value); //create new node
-  if (back == 0) { //if back is null, this is the first element
-    back = temp;
+  if (front == 0) { //if front is null, this is the first element
     front = temp;
+    back = temp;
   }
   else {
     back->setNext(temp); //point back to new node
@@ -35,6 +35,10 @@ int LQueue::dequeue() {
   int result = temp->getValue(); //store value of front
   front = temp->getNext(); //front is now the node after front
   delete temp; //delete temp node
+  if (numElements == 1) { //if this is the last element
+    front = 0;
+    back = 0;
+  }
   numElements--; //decrement numElements
   return result; //return value of old front
 }

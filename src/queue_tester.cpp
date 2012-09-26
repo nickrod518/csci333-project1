@@ -11,7 +11,7 @@ int main() {
   int start, end, elapsed;
   double seconds;
 
-/*
+
   // AQueue testing
   start = clock();
   cout << "Begin AQueue testing..." << endl;
@@ -30,18 +30,16 @@ int main() {
   end = clock();
   elapsed = end - start;
   seconds = (double) elapsed/CLOCKS_PER_SEC;
-  cout << "elapsed time: " << seconds << " seconds " << endl;
+  cout << "Elapsed time: " << seconds << " seconds " << endl;
   cout << endl;
-*/
+
 
   // LQueue testing
   start = clock();
   cout << "Begin LQueue testing..." << endl;
 
   LQueue lQueue = LQueue();
-  cout << "got here" << endl;
-  for (int j = 0; j < 100; ++j) {
-  cout << "big loop" << j << endl;
+  for (int j = 0; j < 10000; ++j) {
     for (int i = 0; i < 10000; ++i)
       lQueue.enqueue(i);
 
@@ -53,7 +51,7 @@ int main() {
   end = clock();
   elapsed = end - start;
   seconds = (double) elapsed/CLOCKS_PER_SEC;
-  cout << "elapsed time: " << seconds << " seconds " << endl;
+  cout << "Elapsed time: " << seconds << " seconds " << endl;
   cout << endl;
 
 
@@ -75,7 +73,7 @@ int main() {
   end = clock();
   elapsed = end - start;
   seconds = (double) elapsed/CLOCKS_PER_SEC;
-  cout << "elapsed time: " << seconds << " seconds " << endl;
+  cout << "Elapsed time: " << seconds << " seconds " << endl;
  
   return 0;
 }
