@@ -27,7 +27,6 @@ void LQueue::enqueue(int value) {
     back = temp; //temp is now back
   }
   numElements++; //increment numElements
-  assert(!isEmpty());
 }
 
 int LQueue::dequeue() {

@@ -12,7 +12,7 @@ class AQueue {
 
  public:
   AQueue(int initialSize = 10);
-  ~AQueue(); //destructor
+  ~AQueue();
   void enqueue(int value);
   int dequeue();
   int size();

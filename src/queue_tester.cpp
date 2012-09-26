@@ -17,23 +17,23 @@ int main() {
   cout << "Begin AQueue testing..." << endl;
 
   AQueue* aQueue = new AQueue();
-  for (int i = 0; i < 1000; ++i)
+  for (int i = 0; i < 10000; ++i)
     aQueue->enqueue(i);
-  cout << "Size after enqueueing 1000: " << aQueue->size() << endl;
+  cout << "Size after enqueueing 10000: " << aQueue->size() << endl;
 
-  for (int i = 0; i < 500; ++i)
+  for (int i = 0; i < 5000; ++i)
     aQueue->dequeue();
-  cout << "Size after dequeueing 500: " << aQueue->size() << endl;
+  cout << "Size after dequeueing 5000: " << aQueue->size() << endl;
   cout << "Is it empty yet? " << aQueue->isEmpty() << endl;
 
-  for (int i = 0; i < 200; ++i)
+  for (int i = 0; i < 2000; ++i)
     aQueue->enqueue(i);
-  cout << "Size after enqueueing 200 more: " << aQueue->size() << endl;
+  cout << "Size after enqueueing 2000 more: " << aQueue->size() << endl;
   cout << "Is it empty yet? " << aQueue->isEmpty() << endl;
 
-  for (int i = 0; i < 700; ++i)
+  for (int i = 0; i < 7000; ++i)
     aQueue->dequeue();
-  cout << "Size after dequeueing the remaining 700: " << aQueue->size() << endl;
+  cout << "Size after dequeueing the remaining 7000: " << aQueue->size() << endl;
   cout << "Is it empty yet? " << aQueue->isEmpty() << endl;
 
   delete aQueue;
@@ -51,23 +51,23 @@ int main() {
   cout << "Begin LQueue testing..." << endl;
 
   LQueue lQueue = LQueue();
-  for (int i = 0; i < 1000; ++i)
+  for (int i = 0; i < 10000; ++i)
     lQueue.enqueue(i);
-  cout << "Size after enqueueing 1000: " << lQueue.size() << endl;
+  cout << "Size after enqueueing 10000: " << lQueue.size() << endl;
 
-  for (int i = 0; i < 500; ++i)
+  for (int i = 0; i < 5000; ++i)
     lQueue.dequeue();
-  cout << "Size after dequeueing 500: " << lQueue.size() << endl;
+  cout << "Size after dequeueing 5000: " << lQueue.size() << endl;
   cout << "Is it empty yet? " << lQueue.isEmpty() << endl;
 
-  for (int i = 0; i < 200; ++i)
+  for (int i = 0; i < 2000; ++i)
     lQueue.enqueue(i);
-  cout << "Size after enqueueing 200 more: " << lQueue.size() << endl;
+  cout << "Size after enqueueing 2000 more: " << lQueue.size() << endl;
   cout << "Is it empty yet? " << lQueue.isEmpty() << endl;
 
-  for (int i = 0; i < 700; ++i)
+  for (int i = 0; i < 7000; ++i)
     lQueue.dequeue();
-  cout << "Size after dequeueing the remaining 700: " << aQueue->size() << endl;
+  cout << "Size after dequeueing the remaining 7000: " << lQueue->size() << endl;
   cout << "Is it empty yet? " << aQueue->isEmpty() << endl;
 
   cout << "...end LQueue testing." << endl;
@@ -83,23 +83,23 @@ int main() {
   cout << "Begin VQueue testing..." << endl;
 
   VQueue* vQueue = new VQueue();
-  for (int i = 0; i < 1000; ++i)
+  for (int i = 0; i < 10000; ++i)
     vQueue->enqueue(i);
-  cout << "Size after enqueueing 1000: " << vQueue->size() << endl;
+  cout << "Size after enqueueing 10000: " << vQueue->size() << endl;
 
-  for (int i = 0; i < 500; ++i)
+  for (int i = 0; i < 5000; ++i)
     vQueue->dequeue();
-  cout << "Size after dequeueing 500: " << vQueue->size() << endl;
+  cout << "Size after dequeueing 5000: " << vQueue->size() << endl;
   cout << "Is it empty yet? " << vQueue->isEmpty() << endl;
 
-  for (int i = 0; i < 200; ++i)
+  for (int i = 0; i < 2000; ++i)
     vQueue->enqueue(i);
-  cout << "Size after enqueueing 200 more: " << vQueue->size() << endl;
+  cout << "Size after enqueueing 2000 more: " << vQueue->size() << endl;
   cout << "Is it empty yet? " << vQueue->isEmpty() << endl;
 
-  for (int i = 0; i < 700; ++i)
+  for (int i = 0; i < 7000; ++i)
     vQueue->dequeue();
-  cout << "Size after dequeueing the remaining 700: " << vQueue->size() << endl;
+  cout << "Size after dequeueing the remaining 7000: " << vQueue->size() << endl;
   cout << "Is it empty yet? " << vQueue->isEmpty() << endl;
 
   delete vQueue;

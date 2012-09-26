@@ -26,7 +26,6 @@ void AQueue::enqueue(int value) {
     delete[] theQueue;
     theQueue = newQueue;
   }
-  assert(numElements != capacity);
 
   // If the array is only 1/4 full, shrink to half it's size
   if (numElements <= capacity/4 && capacity/2 > initialCapacity) {
@@ -36,7 +35,6 @@ void AQueue::enqueue(int value) {
     delete[] theQueue;
     theQueue = newQueue;
   }
-  assert(capacity >= initialCapacity);
 
   theQueue[back] = value;
   back = (back + 1) % capacity;

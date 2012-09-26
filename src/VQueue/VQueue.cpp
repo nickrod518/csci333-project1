@@ -19,6 +19,7 @@ void VQueue::enqueue(int value) {
 }
 
 int VQueue::dequeue() {
+  assert(!theQueue.empty());
   int result = theQueue.front();
   theQueue.pop_front();
   return result;
